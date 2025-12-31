@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "../../Components/Navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { ThemeProvider } from "@/Components/ThemeProvider";
 import CursorBlur from "@/Components/CursorTracker";
 
 
@@ -45,17 +44,11 @@ export default async function RootLayout({
         <link rel="icon" href="/avataaars.svg" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+        <NextIntlClientProvider messages={messages} locale={locale}>   
             <CursorBlur />
             <Navbar />
             {children}
-          </ThemeProvider>
+
         </NextIntlClientProvider>
       </body>
     </html>
