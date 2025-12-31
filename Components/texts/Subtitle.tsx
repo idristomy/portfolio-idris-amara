@@ -1,3 +1,4 @@
+'use client'
 
 type SubtitleProps = {
     title: string;
@@ -7,11 +8,22 @@ type SubtitleProps = {
 function Subtitle ({title, emoji} : SubtitleProps ) {
 
     return(
-        <div className="flex items-center bg-[#14142A] rounded-4xl py-2 px-4 w-fit"> 
+        <div className="flex items-center gap-2 w-fit px-3 py-1 rounded-full bg-[#14142A]">
             <span className="text-xl">{emoji}</span>
-            <p className="lg:text-xl text-sm font-semibold text-purple-400  pl-2">{title}</p>
-            <span className="w-0.5 h-4 ml-1 bg-purple-300"></span>
-        </div>
+            <span className="text-purple-400 text-sm font-semibold tracking-wider uppercase flex items-center">
+                {title}
+                <span className="inline-block w-0.5 h-3.5 bg-purple-400 ml-0.5 animate-fade"></span>
+            </span>
+            <style jsx>{`
+                @keyframes fade {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0; }
+                }
+                .animate-fade {
+                animation: fade 1.5s ease-in-out infinite;
+                }
+            `}</style>
+    </div>
     );
 }
 

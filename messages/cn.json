@@ -1,0 +1,115 @@
+{
+    "HomePage": {
+        "title": "伊德睿",
+        "specialty": "前端开发工程师",
+        "tag": "可工作",
+        "cta": "下载简历"
+    },
+    "AboutPage": {
+        "subtitle": "关于我",
+        "title": "更多了解我",
+        "description": {
+            "p1": "我的名字是伊德睿 <span>伊德睿 (Yi deRui)</span>",
+            "p2": "拥有超过两年的 JavaScript、React 和 Next.js 界面开发和编程经验。",
+            "p3": "计算机科学专业学生，热衷于创造卓越的数字体验。",
+            "p4": "健身爱好者 - 我相信强健的身体和强健的代码同样重要。",
+            "p5": "哪怕是小的进步，也仍然是进步。"
+        },
+        "location": {
+            "label": "位置",
+            "value": "阿尔及利亚 🇩🇿"
+        },
+        "Experience": {
+            "label": "经验",
+            "value": "2年以上"
+        },
+        "skills": {
+            "title1": "我日常使用的技术",
+            "title2": "我熟悉的技术",
+            "subtitle1": "前端开发",
+            "subtitle2": "后端及工具"
+        },
+        "contact": {
+            "title": "让我们合作吧！",
+            "description": "我始终乐于讨论新项目、创意点子，或加入您的愿景。",
+            "cta": "联系我"
+        }
+    },
+    "ProjectsPage": {
+        "subtitle": "项目",
+        "title": "项目与作品",
+        "projects": {
+            "project1": {
+                "title": "旅游代理网站",
+                "description": "一个现代且响应式的旅游代理网站，使用 React 和 Tailwind CSS 构建。特点包括简洁的界面、流畅的导航以及展示目的地、服务和旅行灵感的良好结构。"
+            },
+            "project2": {
+                "title": "Hania 医疗网站",
+                "description": "一个响应式医疗服务与咨询网站，使用 HTML、CSS 和 JavaScript 构建。项目重点在于信息清晰呈现、可访问性和患者友好的布局。"
+            },
+            "project3": {
+                "title": "我的个人作品集",
+                "description": "展示我项目、经验和技能的个人开发者作品集。以性能和可访问性为核心，特点包括流畅的导航、响应式布局和现代化界面设计。"
+            }
+        },
+        "haedline": "更多项目即将上线..."
+    },
+    "EducationPage": {
+        "title": "经历",
+        "subtitle": "经历与学位",
+        "education": {
+            "educard1": {
+                "title": "自由职业前端开发",
+                "location": "远程",
+                "period": "2025 - 至今",
+                "description": "作为自由职业前端开发，使用 React、Next.js、Tailwind CSS 和 JavaScript 为客户构建现代响应式网站。注重界面整洁、性能和可扩展性。"
+            },
+            "educard2": {
+                "title": "网页开发实习",
+                "location": "埃及",
+                "period": "2024年9月12日 - 2024年10月12日",
+                "description": "完成为期一个月的网页开发实习，独立构建完整网站，使用 HTML、CSS 和 JavaScript。获得实际项目结构和响应式设计的经验。"
+            },
+            "educard3": {
+                "title": "计算机科学学士学位",
+                "location": "大学",
+                "period": "2023 - 至今",
+                "description": "目前攻读计算机科学学士学位，专注于编程基础、网页开发、问题解决以及现代软件技术。"
+            },
+            "educard4": {
+                "title": "高中学位 – 实验科学",
+                "location": "高中",
+                "period": "2020 - 2023",
+                "description": "获得实验科学高中毕业证书，建立了扎实的数学、物理和科学思维基础。"
+            }
+        }
+    },
+    "ContactPage": {
+        "title": "联系我",
+        "subtitle": "保持联系",
+        "description": "有问题或想合作？给我留言！",
+        "firstName": {
+            "label": "名字",
+            "placeholder": "约翰"
+        },
+        "lastName": {
+            "label": "姓氏",
+            "placeholder": "多"
+        },
+        "email": {
+            "label": "电子邮件"
+        },
+        "message": {
+            "label": "你的信息",
+            "placeholder": "告诉我你的项目或打个招呼..."
+        },
+        "cta": "发送信息",
+        "phoneNumber": {
+            "label": "电话"
+        },
+        "location": {
+            "label": "位置",
+            "value": "阿尔及尔，阿尔及利亚"
+        }
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "HomePage":{
+        "title": "IDRIS AMARA",
+        "specialty": "Frontend Developer",
+         "tag": "Available for work",
+        "cta": "Download CV"
+    }, 
+    "AboutPage": {
+        "subtitle": "About Me",
+        "title": "Get to know me more",
+        "description": {
+            "p1": "My Name is Idris, In Chinese is<span> 伊德睿 (Yi deRui)</span>",
+            "p2": "For over 2 years developing and programming interfaces with JavaScript, React, and Next.js.",
+            "p3": "Computer Science student passionate about creating exceptional digital experiences.",
+            "p4": "Calisthenics player - I believe in building strong bodies and strong code.",
+            "p5": "Small progress is still progress."
+        },
+        "location": {
+            "label": "Location",
+            "value": "Algeria 🇩🇿"
+        },
+        "Experience": {
+            "label": "Experience",
+            "value": "+2 Years"
+        },
+        "skills": {
+            "title1": "Technologies I Use Daily",
+            "title2": "Technologies I'm Familiar With",
+            "subtitle1": "Frontend Development",
+            "subtitle2": "Backend & Tools"
+        },
+        "contact": {
+            "title": "Let's work together!",
+            "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+            "cta":"Get In Touch"
+        }  
+    },
+    "ProjectsPage": {
+        "subtitle": "Projects",
+        "title" : "Projecs & Works",
+        "projects" : {
+            "project1": {
+                "title": "travel Agency Website",
+                "description": "A modern and responsive travel agency website built with React and Tailwind CSS. It features a clean UI, smooth navigation, and well-structured sections showcasing destinations, services, and travel inspiration."
+            },
+            "project2": {
+                "title": "Hania Medical Website",
+                "description": "A responsive website for medical services and consultations built using HTML, CSS, and JavaScript. The project focuses on clear information presentation, accessibility, and a user-friendly layout for patients seeking healthcare services."
+            },
+            "project3": {
+                "title": "My Portfolio",
+                "description": "A personal developer portfolio showcasing my projects, experience, and skills. Built with performance and accessibility in mind, featuring smooth navigation, responsive layouts, and modern UI design."
+            }
+        },
+        "haedline": "Other projects are coming soon ..."
+    },
+    "EducationPage": {
+        "title": "Experiences",
+        "subtitle": "Experiences & Degrees",
+        "education": {
+  "educard1": {
+    "title": "Freelance Frontend Developer",
+    "location": "Remote",
+    "period": "2025 - Present",
+    "description": "Working as a freelance frontend developer, building modern and responsive web applications for clients using React, Next.js, Tailwind CSS, and JavaScript. Focused on clean UI, performance, and scalability."
+  },
+  "educard2": {
+    "title": "Web Development Internship",
+    "location": "Egypt",
+    "period": "Sep 12, 2024 - Oct 12, 2024",
+    "description": "Completed a one-month internship in web development, where I built a full website using HTML, CSS, and JavaScript. Gained hands-on experience in real-world project structure and responsive design."
+  },
+  "educard3": {
+    "title": "Bachelor’s Degree in Computer Science",
+    "location": "University",
+    "period": "2023 - Present",
+    "description": "Currently pursuing a Bachelor’s degree in Computer Science, focusing on programming fundamentals, web development, problem-solving, and modern software technologies."
+  },
+  "educard4": {
+    "title": "High School Degree – Experimental Sciences",
+    "location": "High School",
+    "period": "2020 - 2023",
+    "description": "Earned a high school diploma in Experimental Sciences, building a strong foundation in mathematics, physics, and scientific thinking."
+  }
+}
+
+    },
+    "ContactPage": {
+        "title": "Contact Me",
+        "subtitle": "Get in touch",
+        "description": "Have a question or want to work together? Drop me a message!",
+        "firstName": {
+            "label": "First Name",
+            "placeholder": "John"
+        },
+        "lastName": {
+            "label": "Last Name",
+            "placeholder": "Doe"
+        },
+        "email": {
+            "label": "Email Address"
+        },
+        "message": {
+            "label": "Your Message",
+            "placeholder": "Tell me about your project or just say hi..."
+        },
+        "cta": "Send Message",
+        "phoneNumber": {
+            "label": "Phone"
+        },
+        "location":{
+            "label": "Location",
+            "value": "Algiers, Algeria"
+        }
+
+    }
+}
