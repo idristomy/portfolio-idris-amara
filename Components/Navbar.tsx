@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { usePageTransition } from "@/Components/TransitionProvider";
 import { TiHome, TiUser } from "react-icons/ti";
 import { FaLightbulb } from "react-icons/fa6";
 import { LuUniversity } from "react-icons/lu";
@@ -17,6 +18,7 @@ export default function Navbar() {
     const pathname = usePathname();
     const locale = useLocale();
     const router = useRouter();
+    const { navigate } = usePageTransition();
     const [isLangOpen, setIsLangIsOpen] = useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -61,10 +63,11 @@ export default function Navbar() {
                             >
                                 <Link
                                     href={item.href}
+                                    onClick={(e) => { e.preventDefault(); navigate(item.href); }}
                                     className={`
                                         rounded-full p-3 flex transition-all duration-300
                                         ${isActive
-                                            ? "bg-purple-500 text-white shadow-purple-500/30 shadow-lg" 
+                                            ? "bg-purple-500 text-white shadow-purple-500/30 shadow-lg"
                                             : "bg-slate-200 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-purple-500/20 hover:text-purple-400"
                                         }
                                     `}
@@ -159,11 +162,11 @@ export default function Navbar() {
                                     >
                                         <Link
                                             href={item.href}
-                                            onClick={() => setIsNavOpen(false)}
+                                            onClick={(e) => { e.preventDefault(); setIsNavOpen(false); navigate(item.href); }}
                                             className={`
                                                 rounded-full p-2.5 flex transition-all duration-300
                                                 ${isActive
-                                                    ? "bg-purple-500 text-white shadow-lg shadow-purple-500/50" 
+                                                    ? "bg-purple-500 text-white shadow-lg shadow-purple-500/50"
                                                     : "bg-slate-200 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-purple-500/20 hover:text-purple-400"
                                                 }
                                             `}

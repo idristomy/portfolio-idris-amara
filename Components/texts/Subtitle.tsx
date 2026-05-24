@@ -14,16 +14,7 @@ function Subtitle ({title, emoji} : SubtitleProps ) {
                 {title}
                 <span className="inline-block w-0.5 h-3.5 bg-purple-400 ml-0.5 animate-fade"></span>
             </span>
-            <style jsx>{`
-                @keyframes fade {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0; }
-                }
-                .animate-fade {
-                animation: fade 1.5s ease-in-out infinite;
-                }
-            `}</style>
-    </div>
+        </div>
     );
 }
 

@@ -5,6 +5,7 @@ import Navbar from "../../Components/Navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import CursorBlur from "@/Components/CursorTracker";
+import TransitionProvider, { RevealGate } from "@/Components/TransitionProvider";
 
 
 
@@ -44,11 +45,12 @@ export default async function RootLayout({
         <link rel="icon" href="/avataaars.svg" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NextIntlClientProvider messages={messages} locale={locale}>   
-            <CursorBlur />
-            <Navbar />
-            {children}
-
+        <NextIntlClientProvider messages={messages} locale={locale}>
+            <TransitionProvider>
+                <CursorBlur />
+                <Navbar />
+                <RevealGate>{children}</RevealGate>
+            </TransitionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

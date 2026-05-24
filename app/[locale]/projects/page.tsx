@@ -1,33 +1,46 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import { SiReact, SiTailwindcss, SiJavascript, SiFramer, SiHtml5, SiCss3, SiNextdotjs } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 import Card from "@/Components/Card";
 import Subtitle from "@/Components/texts/Subtitle";
-import { useTranslations, useLocale } from "use-intl"
+import { useTranslations, useLocale } from "next-intl";
 
+const ease = [0.25, 0.46, 0.45, 0.94] as const;
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+};
+
+const stagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
 
 const projects = [
   {
     titlekey: "projects.project1.title",
     descriptionkey: "projects.project1.description",
     icon: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+      { Icon: SiReact, color: "#61DAFB" },
+      { Icon: SiTailwindcss, color: "#06B6D4" },
+      { Icon: SiJavascript, color: "#F7DF1E" },
+      { Icon: SiFramer, color: "#0055FF" },
+      { Icon: FaGithub, color: "#181717" }
     ],
     img: "/Jadoo Preview.png",
-    url: "https://travel-website-landingpage-xi.vercel.app/"
+    url: "https://travel-website-landing-page-mu.vercel.app/en"
   },
   {
     titlekey: "projects.project2.title",
     descriptionkey: "projects.project2.description",
     icon: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+      { Icon: SiHtml5, color: "#E34F26" },
+      { Icon: SiCss3, color: "#1572B6" },
+      { Icon: SiJavascript, color: "#F7DF1E" },
+      { Icon: FaGithub, color: "#181717" }
     ],
     img: "/Hania Preview.jpeg",
     url: "https://idristomy.github.io/Hania/"
@@ -36,56 +49,27 @@ const projects = [
     titlekey: "projects.project3.title",
     descriptionkey: "projects.project3.description",
     icon: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+      { Icon: SiHtml5, color: "#E34F26" },
+      { Icon: SiNextdotjs, color: "#000000" },
+      { Icon: SiReact, color: "#61DAFB" },
+      { Icon: SiTailwindcss, color: "#06B6D4" },
+      { Icon: FaGithub, color: "#181717" }
     ],
     img: "/Portfolio preview.png",
-    url: "https://your-portfolio-link.com"
+    url: "https://portfolio-idris-amara-rose.vercel.app/"
   }
 ];
-
 
 function Projects() {
   const t = useTranslations("ProjectsPage");
   const locale = useLocale();
-  
-  // Determine direction based on locale
   const isRTL = locale === "ar";
-
-  // Title animation variants - opposite direction of cards
-  const titleVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: isRTL ? -50 : 50 
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
-  // Card animation variants - from right to left (or left to right for RTL)
-  const cardVariants: Variants = {
-    hidden: { 
-      opacity: 0, 
-      x: isRTL ? -100 : 100 
-    },
-    visible: (i: number) => ({ 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.8, delay: i * 0.8, ease: "easeOut" }
-    })
-  };
 
   return (
     <div className="w-fit mx-auto px-4 sm:px-6 md:px-10 lg:px-20 pt-30 pb-10 overflow-hidden">
       <div className="max-w-6xl">
         <motion.div
-          variants={titleVariants}
+          variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -96,17 +80,15 @@ function Projects() {
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {projects.map((item, idx) => (
-            <motion.div
-              key={idx}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: idx * 0.15 }}
-              custom={idx}
-            >
+            <motion.div key={idx} variants={fadeUp}>
               <Card
                 title={t(item.titlekey)}
                 description={t(item.descriptionkey)}
@@ -117,11 +99,11 @@ function Projects() {
               />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.h1
           className="animate-pulse duration-500 transition-all text-center mt-5"
-          variants={titleVariants}
+          variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}

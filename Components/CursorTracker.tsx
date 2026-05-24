@@ -1,34 +1,29 @@
 "use client"
 
-import { useEffect, useState } from "react";
-
-interface Position {
-  x: number;
-  y: number;
-}
+import { useEffect, useRef } from "react";
 
 const CursorBlur: React.FC = () => {
-  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      if (ref.current) {
+        ref.current.style.left = `${e.clientX - 64}px`;
+        ref.current.style.top = `${e.clientY - 64}px`;
+      }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
     <div
-      style={{
-        left: `${position.x - 50}px`, // center the div
-        top: `${position.y - 50}px`,
-      }}
-      className="pointer-events-none fixed w-32 h-32 bg-purple-500/30 rounded-full blur-3xl transition-transform duration-100"
+      ref={ref}
+      className="pointer-events-none fixed w-32 h-32 bg-purple-500/30 rounded-full blur-3xl"
+      style={{ left: "-200px", top: "-200px" }}
     />
   );
 };
