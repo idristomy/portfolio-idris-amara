@@ -31,7 +31,7 @@ const projects = [
       { Icon: FaGithub, color: "#181717" }
     ],
     img: "/Jadoo Preview.png",
-    url: "https://travel-website-landing-page-mu.vercel.app/en"
+    url: "https://travel-website-landing-page-git-main-idristomys-projects.vercel.app"
   },
   {
     titlekey: "projects.project2.title",
